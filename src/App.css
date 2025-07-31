@@ -1,38 +1,315 @@
-.App {
-  text-align: center;
+:root {
+  --primary: #1a237e;
+  --accent: #536dfe;
+  --bg: #f4f6fa;
+  --section-bg: #fff;
+  --footer-bg: #232946;
+  --footer-text: #eaeaea;
+  --text: #232946;
+  --contact-link: #1a237e;
+  --contact-link-hover: #536dfe;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body.dark-mode {
+  --primary: #F0B90B;
+  --accent: #F0B90B;
+  --bg: #181A20;
+  --section-bg: #23262F;
+  --footer-bg: #0B0E11;
+  --footer-text: #EAECEF;
+  --text: #EAECEF;
+  --contact-link: #F0B90B;
+  --contact-link-hover: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
+.cv-root {
   min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-2col-layout {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  background: transparent;
+  box-shadow: none;
+  gap: 32px;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.cv-sidebar {
+  flex: 0 0 340px;
+  background: var(--section-bg);
+  box-shadow: 0 2px 16px rgba(26,35,126,0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 32px 18px 24px 18px;
+  min-width: 260px;
+  max-width: 360px;
+  position: relative;
+  gap: 24px;
+}
+
+.cv-avatar-box {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cv-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cv-goal-box {
+  width: 100%;
+  background: var(--section-bg);
+  /* border-radius: 12px; */
+  padding: 10px 0 10px 14px;
+  /* box-shadow: 0 1px 8px rgba(26,35,126,0.04); */
+  margin-top: 8px;
+  border-left: 3px solid var(--primary);
+  margin-bottom: 8px;
+}
+
+.cv-goal-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cv-goal-content {
+  font-size: 0.98rem;
+  color: #232946;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+body.dark-mode .cv-goal-title {
+  color: #eaecef;
+}
+body.dark-mode .cv-goal-content {
+  color: #eaecef;
+}
+
+.cv-main {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cv-section {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: none;
+  background: var(--section-bg);
+  padding: 28px 24px 18px 24px;
+}
+
+.cv-section:last-child {
+  border-bottom: none;
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 32px;
+  background: var(--section-bg);
+  border-bottom: 3px solid var(--primary);
+  box-shadow: 0 2px 12px rgba(26,35,126,0.06);
+  padding: 32px 24px 20px 24px;
+  transition: background 0.3s, color 0.3s, border-bottom 0.3s;
+}
+
+.cv-header h1 {
+  font-size: 2.6rem;
+  color: var(--primary);
+  margin-bottom: 0.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.cv-header p {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.cv-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.05rem;
+  color: var(--text);
+  flex-wrap: wrap;
+}
+
+.cv-contact a {
+  color: var(--contact-link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.cv-contact a:hover {
+  color: var(--contact-link-hover);
+  text-decoration: underline;
+}
+
+.cv-section h2 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.3s, border-left 0.3s;
+}
+
+.cv-section ul {
+  padding-left: 20px;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.cv-section li {
+  margin-bottom: 0.4em;
+  line-height: 1.7;
+}
+
+.cv-section p,
+.cv-section ul {
+  font-size: 1.08rem;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.cv-time {
+  font-size: 0.98rem;
+  color: #6b6b6b;
+  font-weight: normal;
+  margin-left: 8px;
+  transition: color 0.3s;
+}
+body.dark-mode .cv-time,
+body.dark-mode .cv-note {
+  color: #b2b2b2;
+}
+
+.cv-note {
+  font-size: 0.98rem;
+  color: #6b6b6b;
+  font-style: italic;
+  margin-top: 0.5em;
+  transition: color 0.3s;
+}
+
+.cv-footer {
+  text-align: center;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-size: 1rem;
+  margin-top: 32px;
+  padding: 18px 0 10px 0;
+  letter-spacing: 0.5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+@media (max-width: 900px) {
+  .cv-2col-layout {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 2px;
   }
-  to {
-    transform: rotate(360deg);
+  .cv-sidebar {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px 8px 16px 8px;
+  }
+  .cv-avatar-box {
+    width: 100px;
+    height: 100px;
+  }
+  .cv-avatar {
+  }
+  .cv-goal-box {
+    padding: 10px 8px 8px 8px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .cv-root {
+    padding: 0;
+  }
+  .cv-2col-layout {
+    margin: 0;
+    padding: 0;
+  }
+  .cv-sidebar {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 2px 10px 2px;
+    gap: 10px;
+  }
+  .cv-avatar-box {
+    width: 70px;
+    height: 70px;
+  }
+  .cv-avatar {
+  }
+  .cv-goal-box {
+    padding: 6px 4px 4px 4px;
+  }
+  .cv-main {
+    padding: 0;
+  }
+  .cv-section {
+    padding: 14px 4px 8px 4px;
+  }
+  .cv-header {
+    padding: 20px 6px 14px 6px;
+  }
+  .cv-header h1 {
+    font-size: 1.5rem;
+  }
+  .cv-header p {
+    font-size: 1rem;
+  }
+  .cv-section h2 {
+    font-size: 1.08rem;
+    padding-left: 6px;
+  }
+  .cv-section p,
+  .cv-section ul {
+    font-size: 0.98rem;
   }
 }
