@@ -78,6 +78,6 @@ Dự án này được phát hành dưới MIT License.
 
 ---
 
-**Tác giả**: [Tên của bạn]  
-**Email**: [Email của bạn]  
-**GitHub**: [Link GitHub của bạn]
+**Tác giả**: Lê Chính Trực & Cursor AI ❤️
+**Email**: letruc.work@gmail.com  
+**GitHub**: https://github.com/letrucdev
